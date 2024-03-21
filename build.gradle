@@ -19,6 +19,12 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+//	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	// 자바는 기본적으로 데이터베이스와 커넥션하기 위해 jdbc가 필요하다.
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	// 데이터베이스와 커넥션하기 위한 orm 로드
+	runtimeOnly 'com.h2database:h2'
+	// jdbc와 붙을 db client
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	// junit5라는 라이브러리가 기본적으로 들어가게 된다.
 }

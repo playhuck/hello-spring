@@ -3,13 +3,15 @@ package helllo.hellospring.service;
 import helllo.hellospring.domain.Member;
 import helllo.hellospring.repository.MemberRepository;
 import helllo.hellospring.repository.MemoryMemberRepository;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 import java.util.Optional;
 
+@Transactional
 public class MemberService {
 
-    private MemberRepository memberRepository = new MemoryMemberRepository();
+    private MemberRepository memberRepository;
 
     public MemberService(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
